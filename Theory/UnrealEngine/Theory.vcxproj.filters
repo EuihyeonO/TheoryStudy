@@ -79,6 +79,9 @@
     <Text Include="카메라.txt">
       <Filter>게임제작 프레임워크\플레이어</Filter>
     </Text>
+    <Text Include="데이터 에셋.txt">
+      <Filter>데이터\에셋</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="메모리">
@@ -122,6 +125,9 @@
     </Filter>
     <Filter Include="입출력\입력">
       <UniqueIdentifier>{53d4becf-3f44-4973-8999-807d30a6165d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="데이터\에셋">
+      <UniqueIdentifier>{8abc498e-cdc3-4481-9121-e364efdbbdc0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
