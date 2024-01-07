@@ -1,0 +1,15 @@
+﻿Algo/ 경로에 있는 헤더파일을 추가하여 다양항 알고리즘 기능을 활용가능.
+
+#include "Algo/Accumulate.h"
+Algo::Accumulate(Int32Array, 0) << 자료구조의 이름, 시작점을 인자로 넣으면 모든 원소의 합을 반환.
+
+Algo::Transform(자료구조1, 자료구조2, 함수포인터);
+-> 자료구조 1에 있는 데이터를 함수포인터에 명시된 방식으로 자료구조 2에 복사한다.
+
+Ex)	TArray<FString> AllStudentName;
+	Algo::Transform(StudentsData, AllStudentName,
+		[](const FStudentData& _Val)
+		{
+			return _Val.Name;
+		}
+	);

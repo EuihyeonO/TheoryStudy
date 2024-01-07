@@ -1,0 +1,50 @@
+
+먼저 라이브러리를 사용하기 위해 두 가지 세팅을 해야 한다.
+
+1. JsonObjectConverter.h 헤더파일 추가.
+
+2. 프로젝트명.Build.cs 파일에 Json모듈추가.
+PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "Json", "JsonUtilities"});
+보는 것처럼 끝에 "Json", "JsonUtilities" 를 붙혀주면된다.
+
+1. 경로를 설정한다.
+
+const FString JsonDataFileName(TEXT("StudentJsonData.txt"));
+FString JsonDataAbsolutePath = FPaths::Combine(*SavedDir, *JsonDataFileName);
+FPaths::MakeStandardFilename(JsonDataAbsolutePath);
+
+2. 언리얼 오브젝트를 Json오브젝트로 변환한다.
+
+TSharedRef<FJsonObject> JsonObjectSrc = MakeShared<FJsonObject>();
+FJsonObjectConverter::UStructToJsonObject(StudentSrc->GetClass(), StudentSrc, JsonObjectSrc);
+
+3-1.Json의 Write를 생성한다.(쓰기)
+
+FString JsonOutString;
+TSharedRef<TJsonWriter<TCHAR>> JsoNWriterAr = TJsonWriterFactory<TCHAR>::Create(&JsonOutString);
+
+3-1-2. Writer을 이용해 JsonObject의 데이터를 JsonWriter과 연결된 JsonOutString에 적고, 이를 파일로 저장한다.
+if (FJsonSerializer::Serialize(JsonObjectSrc, JsoNWriterAr))
+{
+	FFileHelper::SaveStringToFile(JsonOutString, *JsonDataAbsolutePath);
+}
+
+---------------------------------------------------------------------------------------------------
+
+3-2-1. 파일의 내용을 문자열로 저장한다. (읽기)
+
+FString JsonInString;
+FFileHelper::LoadFileToString(JsonInString, *JsonDataAbsolutePath);
+
+3-2-2. 문자열과 Reader을 연결한다.
+
+TSharedRef<TJsonReader<TCHAR>> JsonReaderAr = TJsonReaderFactory<TCHAR>::Create(JsonInString);
+
+3-2-3.JSon오브젝트에 읽어온 데이터를 적은 뒤 언리얼 오브젝트로 변환한다.
+
+TSharedPtr<FJsonObject> JsonObjectDest;
+if (FJsonSerializer::Deserialize(JsonReaderAr, JsonObjectDest))
+{
+	UStudent* JsonStudentDest = NewObject<UStudent>();
+	FJsonObjectConverter::JsonObjectToUStruct(JsonObjectDest.ToSharedRef(), JsonStudentDest->GetClass(), JsonStudentDest));
+}

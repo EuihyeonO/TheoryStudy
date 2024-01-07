@@ -1,0 +1,51 @@
+
+
+언리얼 오브젝트는 기본적으로 Serialize 함수를 포함하고 있기 때문에, 이를 오버라이딩하여 사용하면 된다.
+
+void UStudent::Serialize(FArchive& Ar)
+{
+	Super::Serialize(Ar);
+
+	Ar << Order;
+	Ar << Name;
+}
+
+와 같은 방식으로 Serialize 를 오버라이딩하면 된다.
+
+사용법 :
+
+1. 경로 얻기
+직렬화 방식 - FArchive (비 언리얼 오브젝트) 에 작성된 방식과 동일하게 경로를 얻어오면 된다.
+
+2-1 쓰기
+
+TArray<uint8> BufferArray;
+FMemoryWriter MemoryWriterAr(BufferArray);
+StudentSrc->Serialize(MemoryWriterAr);
+
+if (TUniquePtr<FArchive> FileWriterAr = TUniquePtr<FArchive>(IFileManager::Get().CreateFileWriter(*ObjectDataAbsolutePath)))
+{
+	*FileWriterAr << BufferArray;
+	FileWriterAr->Close();
+}
+
+uint8로 이루어진 Buffer배열을 만든 뒤, 해당 배열을 FMemoryWriter라는 객체와 묶어준다.
+이후, 언리얼 오브젝트 객체에서 오버라이딩한 Serialize함수를 호출하여 FMemoryWriter 객체에 데이터를 작성한 뒤,
+FArchive 객체를 이용해 파일에 적어주면 된다.
+
+2-2 읽기
+
+TArray<uint8> BufferArrayFromFile;
+if (TUniquePtr<FArchive> FileReaderAr = TUniquePtr<FArchive>(IFileManager::Get().CreateFileReader(*ObjectDataAbsolutePath)))
+{
+	*FileReaderAr << BufferArrayFromFile;
+	FileReaderAr->Close();
+}
+
+FMemoryReader MemoryReaderAr(BufferArrayFromFile);
+UStudent* StudentDest = NewObject<UStudent>();
+StudentDest->Serialize(MemoryReaderAr);
+
+반대로 FArchive 객체를 통해 파일에 적혀진 데이터를 버퍼배열에 쓴다.
+이후, 해당 버퍼와 FMemoryReader객체를 연동한 뒤, 언리얼 오브젝트에서 오버라이딩한 Serialize함수를 호출하면 된다.
+

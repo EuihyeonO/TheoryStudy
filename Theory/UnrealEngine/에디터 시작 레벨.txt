@@ -1,0 +1,2 @@
+
+Edit -> Project Setting -> Map & Mode -> Edit StartUp Map 에서 원하는 레벨을 설정

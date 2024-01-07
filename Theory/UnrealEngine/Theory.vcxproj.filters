@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Text Include="직렬화 방식 - FArchive (언리얼 오브젝트).txt">
+      <Filter>데이터\직렬화</Filter>
+    </Text>
+    <Text Include="직렬화 방식 - Json 라이브러리.txt">
+      <Filter>데이터\직렬화</Filter>
+    </Text>
+    <Text Include="직렬화 시 고려해야 하는 것.txt">
+      <Filter>데이터\직렬화</Filter>
+    </Text>
+    <Text Include="직렬화 방식 - FArchive (비 언리얼 오브젝트).txt">
+      <Filter>데이터\직렬화</Filter>
+    </Text>
+    <Text Include="스마트 포인터.txt">
+      <Filter>메모리</Filter>
+    </Text>
+    <Text Include="가비지 컬렉터.txt">
+      <Filter>메모리</Filter>
+    </Text>
+    <Text Include="한글 인코딩.txt">
+      <Filter>유틸</Filter>
+    </Text>
+    <Text Include="Algo.txt">
+      <Filter>유틸</Filter>
+    </Text>
+    <Text Include="Assert.txt">
+      <Filter>유틸</Filter>
+    </Text>
+    <Text Include="언리얼 자료구조.txt">
+      <Filter>자료구조</Filter>
+    </Text>
+    <Text Include="Add와 Emplace의 차이.txt">
+      <Filter>자료구조</Filter>
+    </Text>
+    <Text Include="공통 사항.txt">
+      <Filter>자료구조</Filter>
+    </Text>
+    <Text Include="구조체.txt">
+      <Filter>자료구조</Filter>
+    </Text>
+    <Text Include="에셋의 세이브와 로드.txt">
+      <Filter>데이터\패키지</Filter>
+    </Text>
+    <Text Include="월드.txt">
+      <Filter>게임제작 프레임워크\게임</Filter>
+    </Text>
+    <Text Include="게임모드.txt">
+      <Filter>게임제작 프레임워크\게임</Filter>
+    </Text>
+    <Text Include="트리거.txt">
+      <Filter>게임제작 프레임워크\기믹</Filter>
+    </Text>
+    <Text Include="플레이어.txt">
+      <Filter>게임제작 프레임워크\플레이어</Filter>
+    </Text>
+    <Text Include="폰.txt">
+      <Filter>게임제작 프레임워크\플레이어</Filter>
+    </Text>
+    <Text Include="액터 바닥에 붙이기.txt">
+      <Filter>단축키, 에디터 사용법</Filter>
+    </Text>
+    <Text Include="에디터 시작 레벨.txt">
+      <Filter>단축키, 에디터 사용법</Filter>
+    </Text>
+    <Text Include="액터.txt">
+      <Filter>게임제작 프레임워크\액터와 컴포넌트</Filter>
+    </Text>
+    <Text Include="컴포넌트.txt">
+      <Filter>게임제작 프레임워크\액터와 컴포넌트</Filter>
+    </Text>
+    <Text Include="플레이어 컨트롤러.txt">
+      <Filter>게임제작 프레임워크\플레이어</Filter>
+    </Text>
+    <Text Include="향상된 입력 구조.txt">
+      <Filter>입출력\입력</Filter>
+    </Text>
+    <Text Include="카메라.txt">
+      <Filter>게임제작 프레임워크\플레이어</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="메모리">
+      <UniqueIdentifier>{71726030-5ab9-4333-a454-114a3640c8a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="자료구조">
+      <UniqueIdentifier>{281ed733-91e6-4018-b6ea-c9c567ea867a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="유틸">
+      <UniqueIdentifier>{26cc4b1a-374e-4cfc-ad75-22f0fdad0daf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="데이터">
+      <UniqueIdentifier>{001e8d3b-e504-46ac-a17e-0a4a19405fd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="데이터\직렬화">
+      <UniqueIdentifier>{fa6f1998-e9ff-4a60-a099-737fd0b432c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="데이터\패키지">
+      <UniqueIdentifier>{6b9d5277-9290-48d0-855a-af31eb6a1d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크">
+      <UniqueIdentifier>{0cdfb331-32fd-47b4-8889-01b0aa11bd4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크\게임">
+      <UniqueIdentifier>{b41abe0a-430c-4d58-a070-b06eaa0581c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크\기믹">
+      <UniqueIdentifier>{f59a4673-8697-4d7c-a82e-ab12303a28c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크\플레이어">
+      <UniqueIdentifier>{0ba79c84-0712-4625-a587-e2633588322c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="단축키, 에디터 사용법">
+      <UniqueIdentifier>{28a8ccfa-ad16-4fd6-9e08-3286225f3538}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크\액터와 컴포넌트">
+      <UniqueIdentifier>{cde98d15-8848-4f75-b757-1430687f7781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="입출력">
+      <UniqueIdentifier>{53c5f83a-e827-41f1-8828-cab0207acbac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="입출력\입력">
+      <UniqueIdentifier>{53d4becf-3f44-4973-8999-807d30a6165d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
