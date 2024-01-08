@@ -82,6 +82,9 @@
     <Text Include="데이터 에셋.txt">
       <Filter>데이터\에셋</Filter>
     </Text>
+    <Text Include="콘솔 커맨드.txt">
+      <Filter>단축키, 에디터 사용법</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="메모리">
