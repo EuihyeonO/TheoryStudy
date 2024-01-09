@@ -85,7 +85,7 @@
     <Text Include="콘솔 커맨드.txt">
       <Filter>단축키, 에디터 사용법</Filter>
     </Text>
-    <Text Include="애니메이션  몽타주.txt">
+    <Text Include="애니메이션 몽타주.txt">
       <Filter>게임제작 프레임워크\애니메이션</Filter>
     </Text>
     <Text Include="키입력을 이용한 시점 변경.txt">
@@ -93,6 +93,12 @@
     </Text>
     <Text Include="콤보 시스템%28애니메이션%29.txt">
       <Filter>구현해본 기능</Filter>
+    </Text>
+    <Text Include="트레이싱 함수의 이름.txt">
+      <Filter>게임제작 프레임워크\충돌</Filter>
+    </Text>
+    <Text Include="충돌체 디버그 드로잉.txt">
+      <Filter>게임제작 프레임워크\충돌</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="콜리전 프리셋.txt">
       <Filter>게임제작 프레임워크\충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="애니메이션 노티파이.txt">
+      <Filter>게임제작 프레임워크\애니메이션</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

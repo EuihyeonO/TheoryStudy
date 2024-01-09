@@ -135,9 +135,11 @@
     <Text Include="공통 사항.txt" />
     <Text Include="구조체.txt" />
     <Text Include="스마트 포인터.txt" />
+    <Text Include="충돌체 디버그 드로잉.txt" />
+    <Text Include="트레이싱 함수의 이름.txt" />
     <Text Include="콤보 시스템%28애니메이션%29.txt" />
     <Text Include="키입력을 이용한 시점 변경.txt" />
-    <Text Include="애니메이션  몽타주.txt" />
+    <Text Include="애니메이션 몽타주.txt" />
     <Text Include="액터.txt" />
     <Text Include="언리얼 자료구조.txt" />
     <Text Include="에디터 시작 레벨.txt" />
@@ -161,6 +163,7 @@
     <Text Include="한글 인코딩.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="애니메이션 노티파이.txt" />
     <ClInclude Include="콜리전 프리셋.txt" />
     <ClInclude Include="트레이스 채널.txt" />
   </ItemGroup>

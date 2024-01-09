@@ -1,0 +1,17 @@
+
+
+충돌을 효율적으로 디버깅 하기 위해, 충돌체를 화면에 그리는 것.
+
+예시 함수
+캡슐 모양의 콜리전을 드로잉 하는 함수
+
+//이 매크로는 디버그 모드에서만 드로잉이 활성화되도록 하는 매크로
+#if ENABLE_DRAW_DEBUG
+
+	FVector CapsuleOrigin = Start + (End - Start) * 0.5f;
+	float CapsuleHalfHeight = AttackRange * 0.5f;
+	FColor DrawColor = HitDetected ? FColor::Green : FColor::Red;
+
+	DrawDebugCapsule(GetWorld(), CapsuleOrigin, CapsuleHalfHeight, AttackRadius, FRotationMatrix::MakeFromZ(GetActorForwardVector()).ToQuat(), DrawColor, false, 5.0f);
+
+#endif
