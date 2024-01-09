@@ -160,6 +160,10 @@
     <Text Include="트리거.txt" />
     <Text Include="한글 인코딩.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="콜리전 프리셋.txt" />
+    <ClInclude Include="트레이스 채널.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

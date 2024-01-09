@@ -147,5 +147,16 @@
     <Filter Include="구현해본 기능">
       <UniqueIdentifier>{40bc84a7-49f8-408f-9a68-bc8ce3674288}</UniqueIdentifier>
     </Filter>
+    <Filter Include="게임제작 프레임워크\충돌">
+      <UniqueIdentifier>{51875f8a-111a-48bd-bc80-6255b40c738e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="트레이스 채널.txt">
+      <Filter>게임제작 프레임워크\충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="콜리전 프리셋.txt">
+      <Filter>게임제작 프레임워크\충돌</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
