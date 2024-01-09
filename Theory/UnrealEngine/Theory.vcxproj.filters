@@ -85,6 +85,12 @@
     <Text Include="콘솔 커맨드.txt">
       <Filter>단축키, 에디터 사용법</Filter>
     </Text>
+    <Text Include="애니메이션  몽타주.txt">
+      <Filter>게임제작 프레임워크\애니메이션</Filter>
+    </Text>
+    <Text Include="키입력을 이용한 시점 변경.txt">
+      <Filter>구현해본 기능</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="메모리">
@@ -131,6 +137,12 @@
     </Filter>
     <Filter Include="데이터\에셋">
       <UniqueIdentifier>{8abc498e-cdc3-4481-9121-e364efdbbdc0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임제작 프레임워크\애니메이션">
+      <UniqueIdentifier>{44b8a1c4-ebb3-4087-9c55-dc9194084cbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="구현해본 기능">
+      <UniqueIdentifier>{40bc84a7-49f8-408f-9a68-bc8ce3674288}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

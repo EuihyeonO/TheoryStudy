@@ -1,0 +1,102 @@
+
+구현한 기능
+
+키입력(V)이 들어오면, 쿼터뷰 시점에서 숄더뷰 시점으로 바꾸는 기능.
+
+활용한 언리얼 엔진의 기능
+1. 데이터 에셋
+2. 인풋 매핑 컨텍스트
+
+구현한 방법.
+
+먼저, 이넘클래스를 선언하여 Shoulder, Quater을 멤버변수로 선언한다.
+이 이넘타입과 데이터 에셋을 상속받은 클래스를 키, 데이터 쌍으로 갖는 맵을 선언한 뒤, 각 시점에 맞는 데이터 에셋을 맵에 저장하였다.
+데이터 에셋에는 시점에 해당되는 스프링 암, 폰의 옵션을 저장하였고 v키가 입력되면 맵에서 해당하는 데이터 에셋을 가져와 데이터를 덮어쓰기 하였다.
+데이터 에셋에는 각 시점에 해당하는 인풋 매팅 컨텍스트도 포함되어있다.
+
+쿼터뷰 시점같은 경우엔 카메라가 플레이어의 이동과 함께 회전하지 않기 때문에 Look함수가 필요하지 않다.
+반면에 숄더뷰 시점은 Look함수가 필요하기 때문에 시점에 따라 다른 액션을 에디터에서 인풋 매핑 컨텍스트에 각각 연결해주었다.
+
+------------------------------------------------------------------------------------------------------------------------------------
+//데이터 에셋을 불러와 맵에 담는다.
+
+static ConstructorHelpers::FObjectFinder<UABCharacterControlData> ShoulderDataRef(TEXT("/Script/ArenaBattle.ABCharacterControlData'/Game/CharacterControll/ABC_Shoulder.ABC_Shoulder'"));
+if (ShoulderDataRef.Object)
+{
+	CharacterControlManager.Add(ECharacterControlType::Shoulder, ShoulderDataRef.Object);
+}
+
+static ConstructorHelpers::FObjectFinder<UABCharacterControlData> QuaterDataRef(TEXT("/Script/ArenaBattle.ABCharacterControlData'/Game/CharacterControll/ABC_Quater.ABC_Quater'"));
+if (QuaterDataRef.Object)
+{
+	CharacterControlManager.Add(ECharacterControlType::Quater, QuaterDataRef.Object);
+}
+
+//키입력함수 바인딩
+void AABCharacterPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent);
+
+	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
+	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
+	EnhancedInputComponent->BindAction(ChangeControlAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ChangeCharacterControl);
+	EnhancedInputComponent->BindAction(ShoulderMoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ShoulderMove);
+	EnhancedInputComponent->BindAction(ShoulderLookAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ShoulderLook);
+	EnhancedInputComponent->BindAction(QuaterMoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::QuaterMove);
+	EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::Attack);
+}
+
+//V키가 입력되었을 때
+void AABCharacterPlayer::ChangeCharacterControl()
+{
+	if (CurrentCharacterControlType == ECharacterControlType::Quater)
+	{
+		SetCharacterControl(ECharacterControlType::Shoulder);
+	}	
+	else if (CurrentCharacterControlType == ECharacterControlType::Shoulder)
+	{
+		SetCharacterControl(ECharacterControlType::Quater);
+	}
+}
+
+//인풋 매핑 컨텍스트를 변경하고, 데이터 에셋에 있는 데이터를 불러와 덮어쓰기를 한다.
+void AABCharacterPlayer::SetCharacterControl(ECharacterControlType NewCharacterControlType)
+{
+	UABCharacterControlData* NewCharacterControl = CharacterControlManager[NewCharacterControlType];
+	check(NewCharacterControl);
+
+	SetCharacterControlData(NewCharacterControl);
+
+	APlayerController* PlayerController = CastChecked<APlayerController>(GetController());
+	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+	{
+		Subsystem->ClearAllMappings();
+		UInputMappingContext* NewMappingContext = NewCharacterControl->InputMappingContext;
+		if (NewMappingContext)
+		{
+			Subsystem->AddMappingContext(NewMappingContext, 0);
+		}
+	}
+
+	CurrentCharacterControlType = NewCharacterControlType;
+}
+
+//데이터를 덮어씌우는 함수
+void AABCharacterPlayer::SetCharacterControlData(const UABCharacterControlData* CharacterControlData)
+{
+	bUseControllerRotationYaw = CharacterControlData->bUseControllerRotationYaw;
+
+	GetCharacterMovement()->bOrientRotationToMovement = CharacterControlData->bOrientRotationToMovement;
+	GetCharacterMovement()->bUseControllerDesiredRotation = CharacterControlData->bUseControllerDesiredRotation;
+	GetCharacterMovement()->RotationRate = CharacterControlData->RotationRate;
+
+	CameraBoom->TargetArmLength = CharacterControlData->TargetArmLength;
+	CameraBoom->SetRelativeRotation(CharacterControlData->RelativeRotation);
+	CameraBoom->bUsePawnControlRotation = CharacterControlData->bUsePawnControlRotation;
+	CameraBoom->bInheritPitch = CharacterControlData->bInheritPitch;
+	CameraBoom->bInheritYaw = CharacterControlData->bInheritYaw;
+	CameraBoom->bInheritRoll = CharacterControlData->bInheritRoll;
+	CameraBoom->bDoCollisionTest = CharacterControlData->bDoCollisionTest;
+}

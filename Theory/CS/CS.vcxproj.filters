@@ -2,17 +2,17 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Text Include="멀티 태스킹 vs 멀티 프로세스 vs 멀티 프로세싱 vs 멀티 스레딩 .txt">
-      <Filter>실행 흐름</Filter>
+      <Filter>스레드, 프로세스</Filter>
     </Text>
     <Text Include="프로그램 vs프로세스 vs 스레드.txt">
-      <Filter>실행 흐름</Filter>
+      <Filter>스레드, 프로세스</Filter>
     </Text>
     <Text Include="스레드.txt">
-      <Filter>실행 흐름</Filter>
+      <Filter>스레드, 프로세스</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="실행 흐름">
+    <Filter Include="스레드, 프로세스">
       <UniqueIdentifier>{1873722e-f180-49bc-bdf1-c138ed8644ef}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

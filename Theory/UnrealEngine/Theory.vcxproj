@@ -135,6 +135,8 @@
     <Text Include="공통 사항.txt" />
     <Text Include="구조체.txt" />
     <Text Include="스마트 포인터.txt" />
+    <Text Include="키입력을 이용한 시점 변경.txt" />
+    <Text Include="애니메이션  몽타주.txt" />
     <Text Include="액터.txt" />
     <Text Include="언리얼 자료구조.txt" />
     <Text Include="에디터 시작 레벨.txt" />
