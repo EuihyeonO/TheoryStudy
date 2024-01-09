@@ -91,6 +91,9 @@
     <Text Include="키입력을 이용한 시점 변경.txt">
       <Filter>구현해본 기능</Filter>
     </Text>
+    <Text Include="콤보 시스템%28애니메이션%29.txt">
+      <Filter>구현해본 기능</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="메모리">
