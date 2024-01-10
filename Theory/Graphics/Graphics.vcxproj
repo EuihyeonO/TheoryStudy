@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b9d81fa3-d5ab-46da-b964-16c302df2b0e}</ProjectGuid>
-    <RootNamespace>CS</RootNamespace>
+    <ProjectGuid>{d26983d1-9450-4a64-a020-38ab5a749d55}</ProjectGuid>
+    <RootNamespace>Graphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,9 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="멀티 태스킹 vs 멀티 프로세스 vs 멀티 프로세싱 vs 멀티 스레딩 .txt" />
-    <Text Include="멀티 스레딩과 동기화.txt" />
-    <Text Include="프로그램 vs프로세스 vs 스레드.txt" />
+    <Text Include="엠비언트 오클루전 (Ambient Occlusion).txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
