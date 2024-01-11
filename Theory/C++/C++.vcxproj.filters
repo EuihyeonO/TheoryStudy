@@ -18,5 +18,8 @@
     <Text Include="malloc_free VS new_delete.txt">
       <Filter>문법</Filter>
     </Text>
+    <Text Include="오버로딩 VS 오버라이딩.txt">
+      <Filter>문법</Filter>
+    </Text>
   </ItemGroup>
 </Project>
