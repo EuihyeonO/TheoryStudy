@@ -127,7 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="HDR.txt" />
+    <Text Include="감마 코렉션.txt" />
     <Text Include="엠비언트 오클루전 (Ambient Occlusion).txt" />
+    <Text Include="안티 에일리어싱 %28Anti-Aliasing%29.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
