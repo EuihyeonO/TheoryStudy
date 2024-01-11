@@ -10,6 +10,9 @@
     <Text Include="멀티 스레딩과 동기화.txt">
       <Filter>스레드, 프로세스</Filter>
     </Text>
+    <Text Include="컨텍스트 스위칭.txt">
+      <Filter>스레드, 프로세스</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="스레드, 프로세스">

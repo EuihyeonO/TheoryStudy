@@ -129,6 +129,7 @@
   <ItemGroup>
     <Text Include="멀티 태스킹 vs 멀티 프로세스 vs 멀티 프로세싱 vs 멀티 스레딩 .txt" />
     <Text Include="멀티 스레딩과 동기화.txt" />
+    <Text Include="컨텍스트 스위칭.txt" />
     <Text Include="프로그램 vs프로세스 vs 스레드.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
