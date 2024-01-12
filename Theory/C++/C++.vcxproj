@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="malloc_free VS new_delete.txt" />
+    <Text Include="가상 소멸자.txt" />
     <Text Include="구조체 VS 클래스 .txt" />
     <Text Include="오버로딩 VS 오버라이딩.txt" />
     <Text Include="포인터 VS 배열.txt" />
