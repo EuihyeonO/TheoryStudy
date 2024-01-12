@@ -100,6 +100,12 @@
     <Text Include="충돌체 디버그 드로잉.txt">
       <Filter>충돌</Filter>
     </Text>
+    <Text Include="액터 복제.txt">
+      <Filter>단축키, 에디터 기능</Filter>
+    </Text>
+    <Text Include="하드 레퍼런싱, 소프트 레퍼런싱.txt">
+      <Filter>메모리</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="메모리">

@@ -135,7 +135,9 @@
     <Text Include="공통 사항.txt" />
     <Text Include="구조체.txt" />
     <Text Include="스마트 포인터.txt" />
+    <Text Include="액터 복제.txt" />
     <Text Include="충돌체 디버그 드로잉.txt" />
+    <Text Include="하드 레퍼런싱, 소프트 레퍼런싱.txt" />
     <Text Include="트레이싱 함수의 이름.txt" />
     <Text Include="콤보 시스템%28애니메이션%29.txt" />
     <Text Include="키입력을 이용한 시점 변경.txt" />
