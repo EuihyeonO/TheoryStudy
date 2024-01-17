@@ -24,5 +24,14 @@
     <Text Include="가상 소멸자.txt">
       <Filter>문법</Filter>
     </Text>
+    <Text Include="네임 맹글링.txt">
+      <Filter>문법</Filter>
+    </Text>
+    <Text Include="스마트 포인터.txt">
+      <Filter>문법</Filter>
+    </Text>
+    <Text Include="L_Value, R_Value.txt">
+      <Filter>문법</Filter>
+    </Text>
   </ItemGroup>
 </Project>

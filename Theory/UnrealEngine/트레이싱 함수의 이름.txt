@@ -7,7 +7,7 @@ LineTrace, Sweep, Overlap
 2. 충돌 방식
 Test : 충돌 여부만 확인하고 싶을 때 
 
-Single, AnyTest : 충돌 여부 확인과 함께 첫 번째로 적중된 대상의 정보를 받아오고 싶을 때
+Single, AnyTest : 충돌 여부 확인만 확인
 (함수 자체는 bool을 반환하되, 함수이 첫번째 인자에 대상의 정보를 담아준다.)
 
 Multi : 충돌된 모든 대상을 배열로 반환
