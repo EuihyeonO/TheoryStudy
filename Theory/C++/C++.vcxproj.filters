@@ -30,7 +30,10 @@
     <Text Include="스마트 포인터.txt">
       <Filter>문법</Filter>
     </Text>
-    <Text Include="L_Value, R_Value.txt">
+    <Text Include="L_Value VS R_Value.txt">
+      <Filter>문법</Filter>
+    </Text>
+    <Text Include="얉은 복사 VS 깊은 복사.txt">
       <Filter>문법</Filter>
     </Text>
   </ItemGroup>
